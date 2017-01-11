@@ -1,5 +1,5 @@
 // Connect to the domain, as the domain user.
-ConvergenceDomain.connect(url, username, password)
+Convergence.connectAnonymously(DOMAIN_URL)
   .then(initApp)
   .catch(function (error) {
     console.log("Could not connect: " + error);
@@ -40,7 +40,7 @@ function initModel(model) {
 
 /**
  * A utility method to bind a text area to the real time model.  This is
- * available as a sparate utility, but is shown here for completeness.
+ * available as a separate utility, but is shown here for completeness.
  *
  * @param {HTMLTextAreaElement} textArea The text area element to bind too.
  * @param {RealTimeString} stringModel The real time element that holds the text.
