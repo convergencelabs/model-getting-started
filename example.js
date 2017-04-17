@@ -8,9 +8,10 @@ Convergence.connectAnonymously(DOMAIN_URL)
 // 2. Initializes the application after connecting by opening a model.
 function initApp(domain) {
   var modelService = domain.models();
-  modelService.open("example", "getting-started", function () {
-    // This method gets called if the model doesn't exist to set the initial data.
-    return {text: "Hello World"};
+  modelService.openAutoCreate({
+    collection: "example",
+    id: "getting-started",
+    data: { text: "Hello World" }
   })
   .then(initModel)
   .catch(function (error) {
